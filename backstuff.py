@@ -7,6 +7,12 @@ app = Flask(__name__)
 # CORS(app)
 CORS(app, origins=["*"], resources={r"/*": {"origins": "*"}})
 
+@app.route('/')
+def home():
+    return {"status": "Server is running perfectly!"}, 200
+
+
+
 print("yippeee")
 API_URL = "https://console.helium-iot.xyz/api/devices/94944a0000071530/queue"
 API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzIjoiY2hpcnBzdGFjayIsInN1YiI6ImY4Y2UwNDQ5LTBmOTItNDFlNi05ZjBiLThjZmFjMjdiNDMxNSIsInR5cCI6ImtleSJ9.jE4OlznQGvsFqJ1BN5Ew5BdVgB8voF40_A01Wx4hXTo"
